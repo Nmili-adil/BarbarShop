@@ -18,6 +18,7 @@ import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher'
 
 export default async function LandingPage() {
   const t = await getTranslations('landing')
+  const tc = await getTranslations('common')
 
   const features = [
     {
@@ -55,7 +56,7 @@ export default async function LandingPage() {
   const plans = [
     {
       name: t('pricing.starter.name'),
-      price: 29,
+      price: 299,
       desc: t('pricing.starter.desc'),
       features: [
         t('pricing.starter.f1'),
@@ -69,7 +70,7 @@ export default async function LandingPage() {
     },
     {
       name: t('pricing.pro.name'),
-      price: 49,
+      price: 499,
       desc: t('pricing.pro.desc'),
       features: [
         t('pricing.pro.f1'),
@@ -83,7 +84,7 @@ export default async function LandingPage() {
     },
     {
       name: t('pricing.business.name'),
-      price: 79,
+      price: 799,
       desc: t('pricing.business.desc'),
       features: [
         t('pricing.business.f1'),
@@ -392,8 +393,9 @@ export default async function LandingPage() {
                 </div>
                 <div className="flex items-end gap-1 mb-1">
                   <span className={`text-5xl font-black ${highlighted ? 'text-white' : 'text-white'}`}>
-                    ${price}
+                    {price}
                   </span>
+                  <span className={`text-sm mb-2 ml-1 ${highlighted ? 'text-amber-100' : 'text-gray-400'}`}>{tc('currency')}</span>
                   <span className={`text-sm mb-2 ${highlighted ? 'text-amber-100' : 'text-gray-400'}`}>{t('pricing.perMonth')}</span>
                 </div>
                 <p className={`text-sm mb-8 ${highlighted ? 'text-amber-100' : 'text-gray-500'}`}>{desc}</p>
@@ -451,21 +453,77 @@ export default async function LandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 sm:px-6 bg-gradient-to-br from-amber-500 to-amber-600">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="text-5xl mb-6">✂️</div>
-          <h2 className="text-4xl font-black text-white mb-4">
-            {t('cta.title')}
-          </h2>
-          <p className="text-amber-100 text-lg mb-10">
-            {t('cta.subtitle')}
-          </p>
-          <Link href="/register">
-            <Button size="xl" className="bg-white text-amber-600 hover:bg-amber-50 shadow-2xl font-bold">
-              {t('cta.button')}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
+      <section className="relative overflow-hidden bg-gray-950">
+        {/* Full-bleed background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&auto=format&fit=crop&q=80"
+            alt="Barber at work"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority={false}
+          />
+          {/* Dark + amber gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-amber-900/60" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-28 flex flex-col lg:flex-row items-center gap-16">
+          {/* Left: copy */}
+          <div className="flex-1 text-left">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 rounded-full px-4 py-1.5 mb-6">
+              <Scissors className="w-3.5 h-3.5 text-amber-400" />
+              <span className="text-amber-400 text-xs font-semibold uppercase tracking-widest">BarberBook</span>
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-5">
+              {t('cta.title')}
+            </h2>
+
+            <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg">
+              {t('cta.subtitle')}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/register">
+                <Button size="xl" className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-white shadow-2xl shadow-amber-500/30 font-bold">
+                  {t('cta.button')}
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link href="/login">
+                <Button size="xl" variant="outline" className="w-full sm:w-auto border-gray-600 text-white hover:bg-white/10 bg-transparent">
+                  {t('nav.signIn')}
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust row */}
+            <div className="mt-10 flex flex-wrap gap-6">
+              {[t('hero.trust1'), t('hero.trust2'), t('hero.trust3')].map((item) => (
+                <span key={item} className="flex items-center gap-2 text-sm text-gray-400">
+                  <CheckCircle2 className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: stat cards */}
+          <div className="flex-shrink-0 grid grid-cols-2 gap-4 w-full max-w-xs">
+            {[
+              { value: '1 000+', label: 'Barbers' },
+              { value: '60%', label: 'Fewer no-shows' },
+              { value: '10 min', label: 'Setup time' },
+              { value: '24/7', label: 'Online booking' },
+            ].map(({ value, label }) => (
+              <div key={label} className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5 text-center">
+                <div className="text-3xl font-black text-amber-400">{value}</div>
+                <div className="text-xs text-gray-400 mt-1 leading-tight">{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
