@@ -1,0 +1,276 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Shop {
+  id                   String   @id @default(cuid())
+  name                 String
+  slug                 String   @unique
+  phone                String?
+  address              String?
+  city                 String?
+  timezone             String   @default("UTC")
+  logoUrl              String?
+  prayerBreaksEnabled  Boolean  @default(false)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  barbers      Barber[]
+  clients      Client[]
+  services     Service[]
+  subscription Subscription?
+  holidays     ShopHoliday[]
+  walkIns      WalkIn[]
+}
+
+model Barber {
+  id        String     @id @default(cuid())
+  shopId    String
+  name      String
+  email     String
+  phone     String?
+  avatarUrl String?
+  role      BarberRole @default(BARBER)
+  isActive  Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  shop         Shop           @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  services     Service[]
+  availability Availability[]
+  appointments Appointment[]
+  photos       BarberPhoto[]
+
+  @@unique([shopId, email])
+}
+
+enum BarberRole {
+  OWNER
+  MANAGER
+  BARBER
+}
+
+model Client {
+  id             String   @id @default(cuid())
+  shopId         String
+  name           String
+  email          String?
+  phone          String?
+  notes          String?
+  loyaltyPoints  Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  shop                Shop                 @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  appointments        Appointment[]
+  loyaltyTransactions LoyaltyTransaction[]
+  walkIns             WalkIn[]
+
+  @@unique([shopId, email])
+}
+
+model Service {
+  id           String   @id @default(cuid())
+  shopId       String
+  name         String
+  description  String?
+  durationMins Int
+  priceCents   Int
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  shop         Shop          @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  barbers      Barber[]
+  appointments Appointment[]
+}
+
+model Availability {
+  id        String @id @default(cuid())
+  barberId  String
+  dayOfWeek Int
+  startTime String
+  endTime   String
+
+  barber Barber @relation(fields: [barberId], references: [id], onDelete: Cascade)
+
+  @@unique([barberId, dayOfWeek])
+}
+
+model Appointment {
+  id            String            @id @default(cuid())
+  clientId      String
+  barberId      String
+  serviceId     String
+  startsAt      DateTime
+  endsAt        DateTime
+  status        AppointmentStatus @default(PENDING)
+  notes         String?
+  paymentMethod PaymentMethod?
+  paymentStatus PaymentStatus     @default(UNPAID)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  client   Client    @relation(fields: [clientId], references: [id])
+  barber   Barber    @relation(fields: [barberId], references: [id])
+  service  Service   @relation(fields: [serviceId], references: [id])
+  reminder Reminder?
+  review   Review?
+}
+
+enum PaymentMethod {
+  CASH
+  CARD
+  TRANSFER
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+model Reminder {
+  id            String          @id @default(cuid())
+  appointmentId String          @unique
+  channel       ReminderChannel
+  status        ReminderStatus  @default(SCHEDULED)
+  scheduledAt   DateTime
+  sentAt        DateTime?
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+}
+
+enum ReminderChannel {
+  EMAIL
+  SMS
+  WHATSAPP
+}
+
+enum ReminderStatus {
+  SCHEDULED
+  SENT
+  FAILED
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  shopId               String             @unique
+  stripeCustomerId     String             @unique
+  stripeSubscriptionId String?            @unique
+  stripePriceId        String?
+  plan                 SubscriptionPlan   @default(STARTER)
+  status               SubscriptionStatus @default(TRIALING)
+  currentPeriodEnd     DateTime?
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  shop Shop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+}
+
+enum SubscriptionPlan {
+  STARTER
+  PRO
+  BUSINESS
+}
+
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+}
+
+// ─── Moroccan Holiday Calendar ───────────────────────────────────────────────
+model ShopHoliday {
+  id        String   @id @default(cuid())
+  shopId    String
+  name      String
+  nameAr    String?
+  nameFr    String?
+  date      DateTime
+  recurring Boolean  @default(true) // repeat annually by month/day
+  createdAt DateTime @default(now())
+
+  shop Shop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+}
+
+// ─── Walk-in Queue ───────────────────────────────────────────────────────────
+model WalkIn {
+  id         String       @id @default(cuid())
+  shopId     String
+  clientId   String?
+  clientName String
+  clientPhone String?
+  position   Int
+  status     WalkInStatus @default(WAITING)
+  joinedAt   DateTime     @default(now())
+  calledAt   DateTime?
+  doneAt     DateTime?
+
+  shop   Shop    @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  client Client? @relation(fields: [clientId], references: [id])
+}
+
+enum WalkInStatus {
+  WAITING
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+// ─── Loyalty / Stamp Card ────────────────────────────────────────────────────
+model LoyaltyTransaction {
+  id            String              @id @default(cuid())
+  clientId      String
+  appointmentId String?
+  points        Int
+  type          LoyaltyTxType
+  description   String?
+  createdAt     DateTime            @default(now())
+
+  client Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+}
+
+enum LoyaltyTxType {
+  EARN
+  REDEEM
+  ADJUST
+}
+
+// ─── Photo Gallery / Portfolio ───────────────────────────────────────────────
+model BarberPhoto {
+  id        String   @id @default(cuid())
+  barberId  String
+  url       String
+  caption   String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  barber Barber @relation(fields: [barberId], references: [id], onDelete: Cascade)
+}
+
+// ─── Review & Rating ─────────────────────────────────────────────────────────
+model Review {
+  id            String   @id @default(cuid())
+  appointmentId String   @unique
+  clientName    String
+  rating        Int      // 1–5
+  comment       String?
+  isPublic      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+}

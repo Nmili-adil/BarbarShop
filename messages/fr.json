@@ -1,0 +1,196 @@
+{
+  "booking": {
+    "title": "Réserver un rendez-vous",
+    "selectService": "Choisissez un service",
+    "selectBarber": "Choisissez un barbier",
+    "selectSlot": "Choisissez une date et heure",
+    "yourDetails": "Vos coordonnées",
+    "name": "Nom complet",
+    "phone": "Téléphone (WhatsApp)",
+    "email": "Email (optionnel)",
+    "notes": "Notes (optionnel)",
+    "bookNow": "Confirmer la réservation",
+    "back": "Retour",
+    "minutes": "min",
+    "free": "Gratuit",
+    "noSlots": "Aucun créneau disponible ce jour",
+    "bookingConfirmed": "Réservation confirmée !",
+    "joinQueue": "Rejoindre la file d'attente",
+    "reviews": "Avis clients",
+    "noReviews": "Aucun avis pour l'instant",
+    "steps": {
+      "service": "Prestation",
+      "barber": "Barbier",
+      "schedule": "Horaire",
+      "info": "Infos"
+    },
+    "stepX": "Étape {step} / 4",
+    "whatDoYouWant": "Que souhaitez-vous ?",
+    "chooseServiceBelow": "Choisissez une prestation ci-dessous",
+    "noServiceAvailable": "Aucune prestation disponible",
+    "contactShop": "Contactez le salon pour réserver.",
+    "chooseYourBarber": "Choisissez votre barbier",
+    "allExpertsAvailable": "Tous nos experts sont disponibles",
+    "available": "Disponible",
+    "chooseSlot": "Choisissez un créneau",
+    "selectDateAndTime": "Sélectionnez une date et un horaire",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "noSlotsAvailable": "Aucun créneau disponible",
+    "tryAnotherDate": "Essayez une autre date",
+    "morning": "Matin",
+    "afternoon": "Après-midi",
+    "evening": "Soir",
+    "bookingSummary": "Récapitulatif",
+    "withBarber": "Avec {name}",
+    "nameAndPhoneRequired": "Nom et numéro de téléphone sont requis.",
+    "confirming": "Confirmation en cours...",
+    "confirmAppointment": "Confirmer le rendez-vous",
+    "whatsappConfirmation": "Vous recevrez une confirmation par WhatsApp",
+    "confirmSubtitle": "Plus qu'une étape pour confirmer votre rendez-vous",
+    "optional": "optionnel",
+    "roleOwner": "Propriétaire",
+    "roleManager": "Manager",
+    "roleBarber": "Barbier",
+    "shopNotFound": "Salon introuvable",
+    "shopNotFoundDesc": "Ce lien de réservation ne correspond à aucun salon actif.",
+    "poweredBy": "Propulsé par"
+  },
+  "queue": {
+    "title": "Rejoindre la file",
+    "subtitle": "Sans rendez-vous — attendez votre tour",
+    "namePlaceholder": "Nom complet",
+    "phonePlaceholder": "Téléphone (WhatsApp pour notification)",
+    "join": "Prendre un ticket",
+    "position": "Votre position",
+    "estimatedWait": "Temps d'attente estimé",
+    "whatsappNotice": "Vous serez notifié par WhatsApp quand c'est votre tour.",
+    "youreIn": "Vous êtes dans la file !",
+    "connecting": "Connexion..."
+  },
+  "review": {
+    "title": "Évaluez votre visite",
+    "subtitle": "Votre avis nous aide à nous améliorer",
+    "comment": "Commentaire",
+    "commentPlaceholder": "Super service, je reviendrai...",
+    "submit": "Envoyer mon avis",
+    "submitting": "Envoi...",
+    "thanks": "Merci !",
+    "saved": "Votre avis a bien été enregistré.",
+    "alreadySubmitted": "Avis déjà soumis",
+    "alreadyThanks": "Merci pour votre évaluation !",
+    "ratingRequired": "Veuillez sélectionner une note",
+    "optional": "optionnel"
+  },
+  "common": {
+    "currency": "DH",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue"
+  },
+  "landing": {
+    "nav": {
+      "features": "Fonctionnalit\u00e9s",
+      "pricing": "Tarifs",
+      "reviews": "Avis",
+      "signIn": "Se connecter",
+      "startFreeTrial": "Essai gratuit"
+    },
+    "hero": {
+      "badge": "14 jours d'essai gratuit \u00b7 Sans carte bancaire",
+      "titleStart": "Arr\u00eatez de perdre des clients \u00e0 cause des",
+      "titleHighlight": "rendez-vous manqu\u00e9s",
+      "subtitle": "BarberBook offre \u00e0 votre salon une page de r\u00e9servation en ligne, des rappels SMS automatis\u00e9s et un tableau de bord qui vous montre exactement ce qui se passe chaque jour.",
+      "cta": "Obtenez votre page de r\u00e9servation gratuitement",
+      "ctaSecondary": "Voir comment \u00e7a marche",
+      "trust1": "Installation en 10 minutes",
+      "trust2": "Sans engagement",
+      "trust3": "Annulable \u00e0 tout moment"
+    },
+    "mockup": {
+      "today": "Aujourd'hui",
+      "thisWeek": "Cette semaine",
+      "pending": "En attente",
+      "revenue": "Chiffre d'affaires",
+      "confirmed": "Confirm\u00e9"
+    },
+    "problem": {
+      "title": "\u00c7a vous parle ?",
+      "subtitle": "G\u00e9rer un salon de coiffure est d\u00e9j\u00e0 difficile sans ces probl\u00e8mes.",
+      "p1Title": "Le jeu du t\u00e9l\u00e9phone",
+      "p1Desc": "Le client appelle, vous \u00eates en pleine coupe. Vous rappelez, il ne r\u00e9pond pas. La r\u00e9servation est perdue.",
+      "p2Title": "Les absences vous co\u00fbtent de l'argent",
+      "p2Desc": "Une absence \u00e0 35\u20ac n'est pas juste 35\u20ac de perdus \u2014 c'est 30 minutes que vous ne r\u00e9cup\u00e9rerez jamais.",
+      "p3Title": "Les doubles r\u00e9servations = le chaos",
+      "p3Desc": "Les agendas papier et les DMs ne se synchronisent pas. Deux clients \u00e0 la m\u00eame heure, c'est embarrassant."
+    },
+    "features": {
+      "title": "Tout ce dont votre salon a besoin",
+      "subtitle": "Un seul outil pour les r\u00e9servations, rappels, gestion d'\u00e9quipe et analyses.",
+      "f1Title": "Page de r\u00e9servation en ligne",
+      "f1Desc": "Les clients r\u00e9servent depuis votre lien 24h/24. Parfait sur mobile.",
+      "f2Title": "Rappels SMS & Email",
+      "f2Desc": "Rappels automatis\u00e9s 24h avant chaque rendez-vous. R\u00e9duisez les absences de 60\u00a0%.",
+      "f3Title": "Tableau de bord intelligent",
+      "f3Desc": "Visualisez votre journ\u00e9e d'un coup d'\u0153il. G\u00e9rez rendez-vous, clients et revenus.",
+      "f4Title": "Support multi-barbiers",
+      "f4Desc": "G\u00e9rez toute votre \u00e9quipe avec des plannings et disponibilit\u00e9s individuels.",
+      "f5Title": "File d'attente walk-in",
+      "f5Desc": "G\u00e9rez les clients sans rendez-vous en parall\u00e8le des r\u00e9servations, sans double-booking.",
+      "f6Title": "Analyses de revenus",
+      "f6Desc": "Suivez vos revenus, services phares et heures de pointe avec des rapports clairs."
+    },
+    "pricing": {
+      "title": "Des tarifs simples et transparents",
+      "subtitle": "D\u00e9marrez gratuitement. \u00c9voluez au rythme de votre croissance. Annulable \u00e0 tout moment.",
+      "mostPopular": "Le plus populaire",
+      "perMonth": "/mois",
+      "startFreeTrial": "Commencer l'essai gratuit",
+      "contactSales": "Contacter les ventes",
+      "starter": {
+        "name": "Starter",
+        "desc": "Id\u00e9al pour les barbiers solo",
+        "f1": "1 barbier",
+        "f2": "Page de r\u00e9servation en ligne",
+        "f3": "Rappels par email",
+        "f4": "Historique clients",
+        "f5": "Analyses de base"
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "Pour les salons en croissance",
+        "f1": "Jusqu'\u00e0 5 barbiers",
+        "f2": "Rappels SMS + Email",
+        "f3": "Analyses avanc\u00e9es",
+        "f4": "Support prioritaire",
+        "f5": "Page de r\u00e9servation personnalis\u00e9e"
+      },
+      "business": {
+        "name": "Business",
+        "desc": "Pour les salons multi-fauteuils",
+        "f1": "Barbiers illimit\u00e9s",
+        "f2": "Tout ce qui est inclus dans Pro",
+        "f3": "Acc\u00e8s API",
+        "f4": "Onboarding d\u00e9di\u00e9",
+        "f5": "Option marque blanche"
+      }
+    },
+    "testimonials": {
+      "title": "Les barbiers adorent BarberBook",
+      "subtitle": "De vrais salons, de vrais r\u00e9sultats.",
+      "t1Quote": "Je perdais 3 \u00e0 4 rendez-vous par semaine \u00e0 cause des absences. Depuis BarberBook, les rappels ont r\u00e9duit \u00e7a presque \u00e0 z\u00e9ro. Mon chiffre d'affaires a augment\u00e9 de 800\u20ac par mois.",
+      "t2Quote": "Mes clients adorent pouvoir r\u00e9server depuis Instagram \u00e0 minuit. Je me r\u00e9veille avec un planning plein. L'installation a pris 10 minutes \u2014 \u00e7a vaut chaque centime.",
+      "t3Quote": "Nous avons 6 barbiers et g\u00e9rer les plannings de tout le monde \u00e9tait un cauchemar. Le tableau de bord BarberBook est exactement ce dont nous avions besoin. Clair, rapide, sans confusion."
+    },
+    "cta": {
+      "title": "Pr\u00eat \u00e0 remplir votre fauteuil\u00a0?",
+      "subtitle": "Rejoignez plus de 1\u202f000 barbiers qui ont arr\u00eat\u00e9 de perdre de l'argent \u00e0 cause des absences.",
+      "button": "Commencer gratuitement \u2014 Sans carte"
+    },
+    "footer": {
+      "privacy": "Confidentialit\u00e9",
+      "terms": "Conditions",
+      "support": "Support",
+      "copyright": "\u00a9 2026 BarberBook. Tous droits r\u00e9serv\u00e9s."
+    }
+  }
+}

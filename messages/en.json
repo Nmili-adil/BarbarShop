@@ -1,0 +1,196 @@
+{
+  "booking": {
+    "title": "Book an Appointment",
+    "selectService": "Choose a Service",
+    "selectBarber": "Choose a Barber",
+    "selectSlot": "Choose a Date & Time",
+    "yourDetails": "Your Details",
+    "name": "Full Name",
+    "phone": "Phone (WhatsApp)",
+    "email": "Email (optional)",
+    "notes": "Notes (optional)",
+    "bookNow": "Confirm Booking",
+    "back": "Back",
+    "minutes": "min",
+    "free": "Free",
+    "noSlots": "No available slots for this day",
+    "bookingConfirmed": "Booking Confirmed!",
+    "joinQueue": "Join the Walk-in Queue",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet",
+    "steps": {
+      "service": "Service",
+      "barber": "Barber",
+      "schedule": "Schedule",
+      "info": "Info"
+    },
+    "stepX": "Step {step} / 4",
+    "whatDoYouWant": "What would you like?",
+    "chooseServiceBelow": "Choose a service below",
+    "noServiceAvailable": "No services available",
+    "contactShop": "Contact the shop to book.",
+    "chooseYourBarber": "Choose your barber",
+    "allExpertsAvailable": "All our experts are available",
+    "available": "Available",
+    "chooseSlot": "Choose a time slot",
+    "selectDateAndTime": "Select a date and time",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "noSlotsAvailable": "No slots available",
+    "tryAnotherDate": "Try another date",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "bookingSummary": "Summary",
+    "withBarber": "With {name}",
+    "nameAndPhoneRequired": "Full name and phone number are required.",
+    "confirming": "Confirming...",
+    "confirmAppointment": "Confirm appointment",
+    "whatsappConfirmation": "You will receive a confirmation via WhatsApp",
+    "confirmSubtitle": "One more step to confirm your appointment",
+    "optional": "optional",
+    "roleOwner": "Owner",
+    "roleManager": "Manager",
+    "roleBarber": "Barber",
+    "shopNotFound": "Shop not found",
+    "shopNotFoundDesc": "This booking link does not match any active shop.",
+    "poweredBy": "Powered by"
+  },
+  "queue": {
+    "title": "Join the Queue",
+    "subtitle": "Walk-in — wait your turn",
+    "namePlaceholder": "Full Name",
+    "phonePlaceholder": "Phone (WhatsApp for notification)",
+    "join": "Take a Ticket",
+    "position": "Your Position",
+    "estimatedWait": "Estimated wait",
+    "whatsappNotice": "You will be notified via WhatsApp when it's your turn.",
+    "youreIn": "You're in the queue!",
+    "connecting": "Connecting..."
+  },
+  "review": {
+    "title": "Rate Your Visit",
+    "subtitle": "Your feedback helps us improve",
+    "comment": "Comment",
+    "commentPlaceholder": "Great service, I'll come back...",
+    "submit": "Submit Review",
+    "submitting": "Submitting...",
+    "thanks": "Thank you!",
+    "saved": "Your review has been saved.",
+    "alreadySubmitted": "Review already submitted",
+    "alreadyThanks": "Thank you for your feedback!",
+    "ratingRequired": "Please select a rating",
+    "optional": "optional"
+  },
+  "common": {
+    "currency": "MAD",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "reviews": "Reviews",
+      "signIn": "Sign In",
+      "startFreeTrial": "Start Free Trial"
+    },
+    "hero": {
+      "badge": "14-Day Free Trial \u00b7 No Credit Card",
+      "titleStart": "Stop losing clients to",
+      "titleHighlight": "missed appointments",
+      "subtitle": "BarberBook gives your shop an online booking page, automated SMS reminders, and a dashboard that shows you exactly what's happening every day.",
+      "cta": "Get Your Booking Page Free",
+      "ctaSecondary": "See How It Works",
+      "trust1": "Setup in 10 minutes",
+      "trust2": "No contracts",
+      "trust3": "Cancel anytime"
+    },
+    "mockup": {
+      "today": "Today",
+      "thisWeek": "This Week",
+      "pending": "Pending",
+      "revenue": "Revenue",
+      "confirmed": "Confirmed"
+    },
+    "problem": {
+      "title": "Sound familiar?",
+      "subtitle": "Running a barbershop is hard enough without these headaches.",
+      "p1Title": "The Phone Tag Chase",
+      "p1Desc": "Clients call, you're mid-haircut. You call back, they don't answer. You lose the booking.",
+      "p2Title": "No-Shows Cost You Money",
+      "p2Desc": "A no-show at $35 isn't just $35 gone \u2014 it's 30 minutes you can never get back.",
+      "p3Title": "Double Bookings = Chaos",
+      "p3Desc": "Paper books and DMs don't sync. Two clients arriving at the same time is embarrassing."
+    },
+    "features": {
+      "title": "Everything your shop needs",
+      "subtitle": "One tool that handles bookings, reminders, team management, and analytics.",
+      "f1Title": "Online Booking Page",
+      "f1Desc": "Clients book from your link 24/7. Works perfectly on mobile.",
+      "f2Title": "SMS & Email Reminders",
+      "f2Desc": "Automated reminders 24h before every appointment. Cut no-shows by 60%.",
+      "f3Title": "Smart Dashboard",
+      "f3Desc": "See your day at a glance. Manage appointments, clients, and income.",
+      "f4Title": "Multi-Barber Support",
+      "f4Desc": "Manage your whole team with individual schedules and availability.",
+      "f5Title": "Walk-In Queue",
+      "f5Desc": "Handle walk-ins alongside online bookings without double-booking.",
+      "f6Title": "Revenue Analytics",
+      "f6Desc": "Track income, top services, and busiest hours with clear reports."
+    },
+    "pricing": {
+      "title": "Simple, honest pricing",
+      "subtitle": "Start free. Scale as you grow. Cancel anytime.",
+      "mostPopular": "Most Popular",
+      "perMonth": "/mo",
+      "startFreeTrial": "Start Free Trial",
+      "contactSales": "Contact Sales",
+      "starter": {
+        "name": "Starter",
+        "desc": "Perfect for solo barbers",
+        "f1": "1 barber",
+        "f2": "Online booking page",
+        "f3": "Email reminders",
+        "f4": "Client history",
+        "f5": "Basic analytics"
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "For growing shops",
+        "f1": "Up to 5 barbers",
+        "f2": "SMS + Email reminders",
+        "f3": "Advanced analytics",
+        "f4": "Priority support",
+        "f5": "Custom booking page"
+      },
+      "business": {
+        "name": "Business",
+        "desc": "For multi-chair shops",
+        "f1": "Unlimited barbers",
+        "f2": "Everything in Pro",
+        "f3": "API access",
+        "f4": "Dedicated onboarding",
+        "f5": "White-label option"
+      }
+    },
+    "testimonials": {
+      "title": "Barbers love BarberBook",
+      "subtitle": "Real shops, real results.",
+      "t1Quote": "I used to lose 3\u20134 appointments a week to no-shows. Since switching to BarberBook the reminders have cut that almost to zero. My revenue is up $800 a month.",
+      "t2Quote": "My clients love being able to book from Instagram at midnight. I wake up with a full schedule. Setup took 10 minutes \u2014 worth every penny.",
+      "t3Quote": "We have 6 barbers and managing everyone's schedule was a nightmare. BarberBook's team dashboard is exactly what we needed. Clean, fast, no confusion."
+    },
+    "cta": {
+      "title": "Ready to fill your chair?",
+      "subtitle": "Join 1,000+ barbers who stopped losing money to no-shows.",
+      "button": "Get Started Free \u2014 No Card Needed"
+    },
+    "footer": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support",
+      "copyright": "\u00a9 2026 BarberBook. All rights reserved."
+    }
+  }
+}
